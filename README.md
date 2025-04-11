@@ -1,30 +1,28 @@
-## Работа с графикой
+## Raster
 
-### Растр
+Place all high-density (2x) raster graphics from the design into the `raw/images/` folder. This folder is ignored by Git.
 
-Абсолютно всю растровую графику с **двухкратной плотностью** из макета складывайте в `raw/images/`. Здесь графика игнорируется гитом.
+After adding new graphics, immediately run the command `npm run optimize:raster` (or `npm run optimize`) to optimize the images and generate `.webp` versions. This command only needs to be run once each time new raster graphics are added.
 
-После того как добавите графику сразу запускайте команду `npm run optimize:raster` (или просто `npm run optimize`) для оптимизации графики и создания `.webp`-версии. Команду нужно запускать один раз при появлении новой графики в проекте.
+The optimized graphics (with multiple resolutions and density suffixes in filenames) will appear in `source/images`. These optimized files should be committed to the repository.
 
-Новая оптимизированная графика с разной плотностью и суффиксами плотности в именах файлов появится в `source/images`. Эту, уже оптимизированную графику нужно коммитить.
 
-### Вектор
+## Vector
 
-Векторную графику для спрайта (иконки) складывайте в:
+Place vector graphics for the sprite (icons) in:
 
 ```shell
 └── raw/
     └── icons/
 ```
 
-Контентную векторную графику (логотип, графики, иллюстрации) складывайте в:
+Place content vector graphics (logos, charts, illustrations) in:
 
 ```shell
 └── raw/
     └── images/
 ```
-
-Запуск команды `npm run optimize:vector` поместит оптимизированные копии этих svg-файлов в соответствующие папки в исходниках:
+Running `npm run optimize:vector` will place optimized copies of these SVG files into the corresponding folders in the source directory:
 
 ```shell
 └── source/
